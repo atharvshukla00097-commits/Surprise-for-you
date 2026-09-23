@@ -60,24 +60,21 @@
 
 
     <!-- Get name from Page 1 -->
-    <script>
-        const params = new URLSearchParams(window.location.search);
+    <<script>
+    const params = new URLSearchParams(window.location.search);
+    const name = params.get("name");
 
-        const name = params.get("name");
+    if (name) {
+        document.getElementById("birthdayName").textContent = name;
+    }
 
-        if (name) {
-            document.getElementById("birthdayName").textContent = name;
-        }
+    function goToMomo() {
+        const currentName = name || "Friend";
 
-
-        function goToMomo() {
-
-            const currentName = name || "Friend";
-
-            window.location.href =
-                "momo.html?name=" +
-                encodeURIComponent(currentName);
-        }
+        window.location.href =
+            "momo.html?name=" +
+            encodeURIComponent(currentName);
+    }
     </script>
 
 </body>

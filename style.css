@@ -1,7 +1,3 @@
-/* =========================================
-   BASIC RESET
-========================================= */
-
 * {
     margin: 0;
     padding: 0;
@@ -16,48 +12,65 @@ body {
 
 body {
     font-family: Arial, sans-serif;
-    overflow-x: hidden;
 }
 
 
-/* =========================================
+/* =====================================
    FIRST PAGE
-========================================= */
+===================================== */
 
-.home {
+.first-page {
     min-height: 100vh;
-    background: linear-gradient(135deg, #fff0f7, #dff6ff);
+
     display: flex;
     justify-content: center;
     align-items: center;
+
     position: relative;
     overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff0f7,
+            #e2f7ff
+        );
 }
 
 
 /* Main card */
 
-.home-card {
+.card {
     width: min(90%, 430px);
+
     padding: 35px 25px;
-    background: rgba(255, 255, 255, 0.92);
+
+    background: rgba(255,255,255,0.95);
+
     border-radius: 30px;
+
     text-align: center;
-    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.18);
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,0.18);
+
     position: relative;
-    z-index: 5;
+
+    z-index: 10;
 }
 
 
-/* Volleyball top */
+/* Volleyball */
 
-.top-icon {
+.main-ball {
     font-size: 65px;
-    animation: volleyballSpin 4s linear infinite;
+
     margin-bottom: 10px;
+
+    animation: spin 4s linear infinite;
 }
 
-@keyframes volleyballSpin {
+@keyframes spin {
     from {
         transform: rotate(0deg);
     }
@@ -70,29 +83,37 @@ body {
 
 /* Heading */
 
-.home-card h1 {
+.card h1 {
+    color: #ff4385;
+
     font-size: 36px;
-    color: #ff4f8b;
+
     margin-bottom: 15px;
 }
 
-.intro {
-    font-size: 17px;
+.subtitle {
     color: #555;
+
+    font-size: 17px;
+
     line-height: 1.5;
+
     margin-bottom: 20px;
 }
 
 
 /* Dog */
 
-.cute-dog {
+.big-dog {
     font-size: 80px;
-    margin: 10px 0 15px;
-    animation: dogJump 1.2s ease-in-out infinite alternate;
+
+    margin: 10px 0;
+
+    animation: dogJump 1s infinite alternate;
 }
 
 @keyframes dogJump {
+
     from {
         transform: translateY(0);
     }
@@ -103,8 +124,11 @@ body {
 }
 
 
-.enter-text {
+/* Name */
+
+.name-text {
     color: #555;
+
     margin-bottom: 10px;
 }
 
@@ -113,247 +137,183 @@ body {
 
 #nameInput {
     width: 100%;
-    padding: 15px;
-    border: 2px solid #ff8fba;
+
+    padding: 14px;
+
+    border: 2px solid #ff91b9;
+
     border-radius: 15px;
+
     outline: none;
+
     font-size: 16px;
+
     text-align: center;
-    margin-bottom: 15px;
+
+    margin-bottom: 18px;
 }
 
 #nameInput:focus {
-    border-color: #ff3f83;
-    box-shadow: 0 0 12px rgba(255, 63, 131, 0.25);
+    border-color: #ff4385;
 }
 
 
-/* Buttons */
+/* Celebrate */
 
-button {
-    border: none;
-    outline: none;
-    cursor: pointer;
+.celebrate-btn {
 
-    padding: 14px 28px;
+    display: inline-block;
+
+    text-decoration: none;
+
+    padding: 14px 30px;
 
     border-radius: 30px;
 
-    background: linear-gradient(
-        135deg,
-        #ff4f8b,
-        #ff7eb3
-    );
+    background:
+        linear-gradient(
+            135deg,
+            #ff4385,
+            #ff7eb3
+        );
 
     color: white;
 
     font-size: 17px;
+
     font-weight: bold;
 
-    box-shadow: 0 8px 20px rgba(255, 79, 139, 0.35);
+    box-shadow:
+        0 8px 20px rgba(255,67,133,0.35);
 
     transition: 0.25s;
 }
 
-button:hover {
-    transform: scale(1.05);
-}
-
-button:active {
-    transform: scale(0.96);
+.celebrate-btn:hover {
+    transform: scale(1.06);
 }
 
 
-/* =========================================
-   FIRST PAGE DECORATIONS
-========================================= */
+/* Decorations */
 
-.volleyball {
+.floating-ball {
     position: absolute;
-    z-index: 1;
-    user-select: none;
-}
 
-.ball1 {
-    top: 8%;
-    left: 8%;
     font-size: 50px;
-    animation: float1 4s ease-in-out infinite;
+
+    z-index: 2;
+
+    animation: float 4s infinite ease-in-out;
 }
 
-.ball2 {
-    bottom: 10%;
+.ball-one {
+    left: 8%;
+    top: 10%;
+}
+
+.ball-two {
     right: 8%;
-    font-size: 65px;
-    animation: float2 5s ease-in-out infinite;
+    bottom: 10%;
+    animation-delay: 1s;
 }
 
-.ball3 {
-    top: 20%;
-    right: 12%;
-    font-size: 35px;
-    animation: float3 3.5s ease-in-out infinite;
+.floating-dog {
+    position: absolute;
+
+    font-size: 45px;
+
+    z-index: 2;
+
+    animation: float 3s infinite alternate;
 }
 
-@keyframes float1 {
-    0%, 100% {
-        transform: translateY(0) rotate(0deg);
-    }
-
-    50% {
-        transform: translateY(-25px) rotate(20deg);
-    }
+.dog-one {
+    left: 8%;
+    bottom: 8%;
 }
 
-@keyframes float2 {
-    0%, 100% {
-        transform: translateY(0) rotate(0deg);
-    }
-
-    50% {
-        transform: translateY(-30px) rotate(-20deg);
-    }
+.dog-two {
+    right: 8%;
+    top: 8%;
 }
 
-@keyframes float3 {
-    0%, 100% {
+@keyframes float {
+
+    0%,100% {
         transform: translateY(0);
     }
 
     50% {
-        transform: translateY(20px);
+        transform: translateY(-25px);
     }
 }
 
 
-/* Dogs around first page */
-
-.dog {
-    position: absolute;
-    z-index: 1;
-    font-size: 45px;
-    user-select: none;
-}
-
-.dog1 {
-    bottom: 7%;
-    left: 8%;
-    animation: dogWalk1 4s ease-in-out infinite alternate;
-}
-
-.dog2 {
-    top: 7%;
-    right: 7%;
-    animation: dogWalk2 4s ease-in-out infinite alternate;
-}
-
-@keyframes dogWalk1 {
-    from {
-        transform: translateX(0);
-    }
-
-    to {
-        transform: translateX(25px);
-    }
-}
-
-@keyframes dogWalk2 {
-    from {
-        transform: translateX(0);
-    }
-
-    to {
-        transform: translateX(-25px);
-    }
-}
-
-
-/* =========================================
+/* =====================================
    SECOND PAGE
-========================================= */
+===================================== */
 
-/*
-   VERY IMPORTANT:
-   Second page is hidden when website opens.
-*/
+.second-page {
 
-#birthdayPage {
-    display: none;
-}
-
-
-/*
-   JavaScript changes it to flex.
-*/
-
-.birthday-page {
     min-height: 100vh;
-    width: 100%;
 
-    background:
-        radial-gradient(
-            circle at top,
-            #fff6fb,
-            #dff7ff 45%,
-            #ffe5f0
-        );
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
 
     position: relative;
 
     overflow: hidden;
 
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    padding: 30px 15px;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #fff8fc,
+            #dff8ff 45%,
+            #ffe5f0
+        );
+}
+
+
+/* Birthday card */
+
+.birthday-card {
+
+    width: min(92%, 500px);
+
+    padding: 30px 22px;
+
+    background: rgba(255,255,255,0.94);
+
+    border-radius: 30px;
 
     text-align: center;
 
-    padding: 35px 20px;
-
-    z-index: 20;
-}
-
-
-/* =========================================
-   SECOND PAGE VOLLEYBALL
-========================================= */
-
-.big-ball {
-    top: 5%;
-    left: 7%;
-    font-size: 70px;
-
-    animation:
-        secondBall 4s ease-in-out infinite;
-}
-
-@keyframes secondBall {
-    0%, 100% {
-        transform: translateY(0) rotate(0deg);
-    }
-
-    50% {
-        transform: translateY(-30px) rotate(180deg);
-    }
-}
-
-
-/* =========================================
-   BIRTHDAY PHOTO
-========================================= */
-
-.birthday-photo {
     position: relative;
+
+    z-index: 10;
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,0.18);
+}
+
+
+/* Photo */
+
+.photo-box {
 
     width: 190px;
     height: 190px;
 
-    margin-bottom: 20px;
-
-    z-index: 5;
+    margin: 0 auto 20px;
 }
 
-.birthday-photo img {
+.photo-box img {
+
     width: 100%;
     height: 100%;
 
@@ -364,212 +324,197 @@ button:active {
     border: 6px solid white;
 
     box-shadow:
-        0 10px 35px rgba(0, 0, 0, 0.2);
-
-    display: block;
+        0 10px 30px rgba(0,0,0,0.2);
 }
 
 
-/* =========================================
-   BIRTHDAY TEXT
-========================================= */
+/* Birthday heading */
 
-.birthday-page h1 {
-    font-size: clamp(34px, 8vw, 55px);
+.birthday-card h1 {
 
     color: #ff4385;
 
-    margin-bottom: 5px;
+    font-size: clamp(34px, 8vw, 52px);
 
-    text-shadow:
-        0 3px 10px rgba(255, 67, 133, 0.2);
+    margin-bottom: 8px;
 }
 
-
-#personName {
-    font-size: clamp(26px, 6vw, 40px);
+.birthday-card h2 {
 
     color: #333;
 
+    font-size: 28px;
+
     margin-bottom: 12px;
 }
 
-
-.birthday-message {
-    max-width: 500px;
-
-    font-size: 18px;
-
-    line-height: 1.6;
+.birthday-card p {
 
     color: #555;
 
-    margin-bottom: 10px;
+    font-size: 17px;
+
+    line-height: 1.6;
 }
 
 
-/* =========================================
-   BIRTHDAY DOG
-========================================= */
+/* Dog */
 
 .birthday-dog {
-    font-size: 85px;
 
-    margin: 5px 0 10px;
+    font-size: 80px;
 
-    animation:
-        birthdayDog 1s ease-in-out infinite alternate;
-}
+    margin: 10px 0;
 
-@keyframes birthdayDog {
-    from {
-        transform: translateY(0) rotate(-4deg);
-    }
-
-    to {
-        transform: translateY(-15px) rotate(4deg);
-    }
+    animation: dogJump 1s infinite alternate;
 }
 
 
-/* =========================================
-   TAP MESSAGE
-========================================= */
+/* Surprise text */
 
-.tap-message {
-    font-size: 16px;
+.surprise-text {
 
-    color: #666;
-
-    margin-bottom: 12px;
+    margin-bottom: 15px;
 }
 
 
-/* =========================================
-   BALLOONS
-========================================= */
+/* Surprise button */
+
+.surprise-btn {
+
+    border: none;
+
+    padding: 14px 28px;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff4385,
+            #ff7eb3
+        );
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px rgba(255,67,133,0.35);
+}
+
+
+/* =====================================
+   SECOND PAGE BALLOONS
+===================================== */
 
 .balloon {
+
     position: absolute;
 
     font-size: 55px;
 
     z-index: 2;
 
-    user-select: none;
+    animation: balloonFloat 4s infinite ease-in-out;
 }
 
-
-/* Different positions */
-
-.balloon1 {
+.b1 {
     left: 5%;
-    bottom: 5%;
-
-    animation: balloonMove1 5s ease-in-out infinite;
-}
-
-.balloon2 {
-    left: 20%;
-    top: 8%;
-
-    animation: balloonMove2 4s ease-in-out infinite;
-}
-
-.balloon3 {
-    right: 7%;
-    bottom: 8%;
-
-    animation: balloonMove3 5.5s ease-in-out infinite;
-}
-
-.balloon4 {
-    right: 20%;
     top: 10%;
-
-    animation: balloonMove4 4.5s ease-in-out infinite;
 }
 
-.balloon5 {
-    left: 45%;
+.b2 {
+    left: 18%;
+    bottom: 8%;
+    animation-delay: 1s;
+}
+
+.b3 {
+    right: 5%;
+    top: 12%;
+    animation-delay: 0.5s;
+}
+
+.b4 {
+    right: 18%;
+    bottom: 8%;
+    animation-delay: 1.5s;
+}
+
+.b5 {
+    left: 47%;
     top: 3%;
-
-    animation: balloonMove5 5s ease-in-out infinite;
+    animation-delay: 0.8s;
 }
 
+@keyframes balloonFloat {
 
-/* Balloon animations */
-
-@keyframes balloonMove1 {
-    0%, 100% {
+    0%,100% {
         transform: translateY(0) rotate(-5deg);
     }
 
     50% {
-        transform: translateY(-30px) rotate(5deg);
-    }
-}
-
-@keyframes balloonMove2 {
-    0%, 100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(25px);
-    }
-}
-
-@keyframes balloonMove3 {
-    0%, 100% {
-        transform: translateY(0) rotate(5deg);
-    }
-
-    50% {
-        transform: translateY(-35px) rotate(-5deg);
-    }
-}
-
-@keyframes balloonMove4 {
-    0%, 100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(30px);
-    }
-}
-
-@keyframes balloonMove5 {
-    0%, 100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(20px);
+        transform: translateY(-25px) rotate(5deg);
     }
 }
 
 
-/* =========================================
-   MOBILE RESPONSIVE
-========================================= */
+/* Volleyball second page */
+
+.second-ball {
+
+    position: absolute;
+
+    left: 7%;
+    top: 45%;
+
+    font-size: 65px;
+
+    z-index: 2;
+
+    animation: spinFloat 5s infinite linear;
+}
+
+@keyframes spinFloat {
+
+    from {
+        transform: rotate(0deg) translateY(0);
+    }
+
+    to {
+        transform: rotate(360deg) translateY(-10px);
+    }
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
 
 @media (max-width: 600px) {
 
-    .home-card {
-        padding: 30px 20px;
+    .card {
+        padding: 28px 20px;
     }
 
-    .home-card h1 {
+    .card h1 {
         font-size: 30px;
     }
 
-    .cute-dog {
+    .big-dog {
         font-size: 70px;
     }
 
-    .birthday-photo {
+    .birthday-card {
+        padding: 25px 18px;
+    }
+
+    .photo-box {
         width: 160px;
         height: 160px;
     }
@@ -578,21 +523,11 @@ button:active {
         font-size: 70px;
     }
 
-    .ball1,
-    .ball2,
-    .ball3 {
-        font-size: 35px;
-    }
-
-    .dog {
-        font-size: 35px;
-    }
-
     .balloon {
         font-size: 40px;
     }
 
-    .birthday-message {
-        font-size: 16px;
+    .second-ball {
+        font-size: 45px;
     }
-    }
+}

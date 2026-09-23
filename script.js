@@ -1,62 +1,101 @@
+/* =========================================
+   PAGE 1 → PAGE 2
+========================================= */
+
 function startBirthday() {
 
     const input = document.getElementById("nameInput");
+
     const name = input.value.trim();
 
     if (name === "") {
+
         alert("Pehle birthday person ka naam likho ❤️");
+
+        input.focus();
+
         return;
     }
 
-    // Name second page par show karo
-    document.getElementById("personName").textContent =
-        "Dear " + name + " 💖";
+    /*
+       Save name so it remains available
+       on Page 2 and Page 3.
+    */
 
-    // First page hide
-    document.querySelector(".home").style.display = "none";
+    localStorage.setItem("birthdayName", name);
 
-    // Second page show
-    document.getElementById("birthdayPage").style.display = "flex";
+    /*
+       Open actual second HTML page.
+    */
 
-    // Balloons
-    createBalloons();
+    window.location.href = "birthday.html";
 }
 
 
-function createBalloons() {
+/* =========================================
+   PAGE 2 → PAGE 3
+========================================= */
 
-    const emojis = ["🎈", "🎈", "🎈", "🎈", "🎈", "🎈", "🎈", "🎈"];
+function goToMomo() {
 
-    emojis.forEach(function (emoji, index) {
-
-        const balloon = document.createElement("div");
-
-        balloon.className = "floating-balloon";
-
-        balloon.textContent = emoji;
-
-        balloon.style.position = "fixed";
-        balloon.style.left = Math.random() * 90 + "%";
-        balloon.style.bottom = "-80px";
-        balloon.style.fontSize = "45px";
-        balloon.style.zIndex = "100";
-
-        balloon.style.transition = "transform 5s linear";
-
-        document.body.appendChild(balloon);
-
-        setTimeout(function () {
-
-            balloon.style.transform =
-                "translateY(-120vh)";
-
-        }, 100 + index * 200);
-    });
+    window.location.href = "momo.html";
 }
 
 
-function showNextSurprise() {
+/* =========================================
+   LOAD NAME
+========================================= */
 
-    alert("🎉 The next surprise is coming! 💖");
+document.addEventListener("DOMContentLoaded", function () {
 
+    const savedName =
+        localStorage.getItem("birthdayName");
+
+    /*
+       Page 2
+    */
+
+    const birthdayName =
+        document.getElementById("birthdayName");
+
+    if (birthdayName && savedName) {
+
+        birthdayName.textContent =
+            savedName;
+    }
+
+
+    /*
+       Page 3
+    */
+
+    const momoName =
+        document.getElementById("momoName");
+
+    if (momoName && savedName) {
+
+        momoName.textContent =
+            savedName;
+    }
+
+});
+
+
+/* =========================================
+   FINAL BUTTON
+========================================= */
+
+function finalSurprise() {
+
+    const savedName =
+        localStorage.getItem("birthdayName");
+
+    const name =
+        savedName || "Friend";
+
+    alert(
+        "🎂 Happy Birthday " +
+        name +
+        "! ❤️🐶🎉"
+    );
 }

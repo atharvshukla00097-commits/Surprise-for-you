@@ -3,31 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Birthday Surprise 🏐🐶</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="first-page">
+<body class="home">
 
-    <div class="floating-ball ball-one">🏐</div>
-    <div class="floating-ball ball-two">🏐</div>
-    <div class="floating-dog dog-one">🐶</div>
-    <div class="floating-dog dog-two">🐕</div>
+    <!-- Volleyball decorations -->
+    <div class="volleyball ball1">🏐</div>
+    <div class="volleyball ball2">🏐</div>
+    <div class="volleyball ball3">🏐</div>
 
-    <div class="card">
+    <!-- Pomeranian -->
+    <div class="dog dog1">🐶</div>
+    <div class="dog dog2">🐕</div>
 
-        <div class="main-ball">🏐</div>
+    <main class="home-card">
 
-        <h1>Birthday Surprise 🎂</h1>
+        <div class="top-icon">🏐</div>
 
-        <p class="subtitle">
-            A special birthday surprise is waiting for you! 💖
+        <h1>Birthday Surprise</h1>
+
+        <p class="intro">
+            A special birthday surprise is waiting for you! 🎂
         </p>
 
-        <div class="big-dog">🐶</div>
+        <div class="cute-dog">
+            🐶
+        </div>
 
-        <p class="name-text">
-            Birthday person ka naam likho 💕
+        <p class="enter-text">
+            Birthday person ka naam likho 💖
         </p>
 
         <input
@@ -35,14 +43,16 @@
             id="nameInput"
             placeholder="Enter name..."
             maxlength="30"
+            autocomplete="off"
         >
 
-        <!-- DIRECT SECOND PAGE -->
-        <a href="birthday.html" class="celebrate-btn">
+        <button type="button" onclick="startBirthday()">
             Celebrate 🎉
-        </a>
+        </button>
 
-    </div>
+    </main>
+
+    <script src="script.js"></script>
 
 </body>
 </html>

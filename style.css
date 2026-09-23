@@ -1,3 +1,500 @@
+/* =========================================
+   BASIC RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   FIRST PAGE
+========================================= */
+
+.home {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #fff0f7, #dff6ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* Main card */
+
+.home-card {
+    width: min(90%, 430px);
+    padding: 35px 25px;
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.18);
+    position: relative;
+    z-index: 5;
+}
+
+
+/* Volleyball top */
+
+.top-icon {
+    font-size: 65px;
+    animation: volleyballSpin 4s linear infinite;
+    margin-bottom: 10px;
+}
+
+@keyframes volleyballSpin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* Heading */
+
+.home-card h1 {
+    font-size: 36px;
+    color: #ff4f8b;
+    margin-bottom: 15px;
+}
+
+.intro {
+    font-size: 17px;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+
+/* Dog */
+
+.cute-dog {
+    font-size: 80px;
+    margin: 10px 0 15px;
+    animation: dogJump 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes dogJump {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-12px);
+    }
+}
+
+
+.enter-text {
+    color: #555;
+    margin-bottom: 10px;
+}
+
+
+/* Input */
+
+#nameInput {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #ff8fba;
+    border-radius: 15px;
+    outline: none;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#nameInput:focus {
+    border-color: #ff3f83;
+    box-shadow: 0 0 12px rgba(255, 63, 131, 0.25);
+}
+
+
+/* Buttons */
+
+button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    padding: 14px 28px;
+
+    border-radius: 30px;
+
+    background: linear-gradient(
+        135deg,
+        #ff4f8b,
+        #ff7eb3
+    );
+
+    color: white;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    box-shadow: 0 8px 20px rgba(255, 79, 139, 0.35);
+
+    transition: 0.25s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.96);
+}
+
+
+/* =========================================
+   FIRST PAGE DECORATIONS
+========================================= */
+
+.volleyball {
+    position: absolute;
+    z-index: 1;
+    user-select: none;
+}
+
+.ball1 {
+    top: 8%;
+    left: 8%;
+    font-size: 50px;
+    animation: float1 4s ease-in-out infinite;
+}
+
+.ball2 {
+    bottom: 10%;
+    right: 8%;
+    font-size: 65px;
+    animation: float2 5s ease-in-out infinite;
+}
+
+.ball3 {
+    top: 20%;
+    right: 12%;
+    font-size: 35px;
+    animation: float3 3.5s ease-in-out infinite;
+}
+
+@keyframes float1 {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-25px) rotate(20deg);
+    }
+}
+
+@keyframes float2 {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-30px) rotate(-20deg);
+    }
+}
+
+@keyframes float3 {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(20px);
+    }
+}
+
+
+/* Dogs around first page */
+
+.dog {
+    position: absolute;
+    z-index: 1;
+    font-size: 45px;
+    user-select: none;
+}
+
+.dog1 {
+    bottom: 7%;
+    left: 8%;
+    animation: dogWalk1 4s ease-in-out infinite alternate;
+}
+
+.dog2 {
+    top: 7%;
+    right: 7%;
+    animation: dogWalk2 4s ease-in-out infinite alternate;
+}
+
+@keyframes dogWalk1 {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(25px);
+    }
+}
+
+@keyframes dogWalk2 {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-25px);
+    }
+}
+
+
+/* =========================================
+   SECOND PAGE
+========================================= */
+
+/*
+   VERY IMPORTANT:
+   Second page is hidden when website opens.
+*/
+
+#birthdayPage {
+    display: none;
+}
+
+
+/*
+   JavaScript changes it to flex.
+*/
+
+.birthday-page {
+    min-height: 100vh;
+    width: 100%;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #fff6fb,
+            #dff7ff 45%,
+            #ffe5f0
+        );
+
+    position: relative;
+
+    overflow: hidden;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 35px 20px;
+
+    z-index: 20;
+}
+
+
+/* =========================================
+   SECOND PAGE VOLLEYBALL
+========================================= */
+
+.big-ball {
+    top: 5%;
+    left: 7%;
+    font-size: 70px;
+
+    animation:
+        secondBall 4s ease-in-out infinite;
+}
+
+@keyframes secondBall {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-30px) rotate(180deg);
+    }
+}
+
+
+/* =========================================
+   BIRTHDAY PHOTO
+========================================= */
+
+.birthday-photo {
+    position: relative;
+
+    width: 190px;
+    height: 190px;
+
+    margin-bottom: 20px;
+
+    z-index: 5;
+}
+
+.birthday-photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 6px solid white;
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.2);
+
+    display: block;
+}
+
+
+/* =========================================
+   BIRTHDAY TEXT
+========================================= */
+
+.birthday-page h1 {
+    font-size: clamp(34px, 8vw, 55px);
+
+    color: #ff4385;
+
+    margin-bottom: 5px;
+
+    text-shadow:
+        0 3px 10px rgba(255, 67, 133, 0.2);
+}
+
+
+#personName {
+    font-size: clamp(26px, 6vw, 40px);
+
+    color: #333;
+
+    margin-bottom: 12px;
+}
+
+
+.birthday-message {
+    max-width: 500px;
+
+    font-size: 18px;
+
+    line-height: 1.6;
+
+    color: #555;
+
+    margin-bottom: 10px;
+}
+
+
+/* =========================================
+   BIRTHDAY DOG
+========================================= */
+
+.birthday-dog {
+    font-size: 85px;
+
+    margin: 5px 0 10px;
+
+    animation:
+        birthdayDog 1s ease-in-out infinite alternate;
+}
+
+@keyframes birthdayDog {
+    from {
+        transform: translateY(0) rotate(-4deg);
+    }
+
+    to {
+        transform: translateY(-15px) rotate(4deg);
+    }
+}
+
+
+/* =========================================
+   TAP MESSAGE
+========================================= */
+
+.tap-message {
+    font-size: 16px;
+
+    color: #666;
+
+    margin-bottom: 12px;
+}
+
+
+/* =========================================
+   BALLOONS
+========================================= */
+
+.balloon {
+    position: absolute;
+
+    font-size: 55px;
+
+    z-index: 2;
+
+    user-select: none;
+}
+
+
+/* Different positions */
+
+.balloon1 {
+    left: 5%;
+    bottom: 5%;
+
+    animation: balloonMove1 5s ease-in-out infinite;
+}
+
+.balloon2 {
+    left: 20%;
+    top: 8%;
+
+    animation: balloonMove2 4s ease-in-out infinite;
+}
+
+.balloon3 {
+    right: 7%;
+    bottom: 8%;
+
+    animation: balloonMove3 5.5s ease-in-out infinite;
+}
+
+.balloon4 {
+    right: 20%;
+    top: 10%;
+
+    animation: balloonMove4 4.5s ease-in-out infinite;
+}
+
+.balloon5 {
+    left: 45%;
+    top: 3%;
+
+    animation: balloonMove5 5s ease-in-out infinite;
 }
 
 
@@ -98,4 +595,4 @@
     .birthday-message {
         font-size: 16px;
     }
-}
+    }

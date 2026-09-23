@@ -10,5 +10,13 @@
 
     <h2>SHRADDHA SHUKLA ❤️</h2>
 
+<script>
+const params = new URLSearchParams(window.location.search);
+const name = params.get("name");
+
+if (name) {
+    document.getElementById("birthdayName").textContent = name;
+}
+</script>
 </body>
 </html>

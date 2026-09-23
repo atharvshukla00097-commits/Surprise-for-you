@@ -38,17 +38,19 @@
             Birthday person ka naam likho 💖
         </p>
 
-        <input
-            type="text"
-            id="nameInput"
-            placeholder="Enter name..."
-            maxlength="30"
-            autocomplete="off"
-        >
+        <form action="birthday.html" method="get">
+    <input 
+        type="text" 
+        id="nameInput" 
+        name="name"
+        placeholder="Enter name..." 
+        maxlength="30" 
+        autocomplete="off"
+        required
+    >
 
-        <button type="button" onclick="startBirthday()">
-            Celebrate 🎉
-        </button>
+    <button type="submit">Celebrate 🎉</button>
+        </form>
 
     </main>
 

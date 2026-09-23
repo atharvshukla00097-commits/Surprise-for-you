@@ -1,23 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Momo Surprise 🐶❤️</title>
 
     <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body class="momo-page">
 
-    <!-- Cute floating decorations -->
+    <!-- Floating decorations -->
     <div class="momo-float momo1">❤️</div>
     <div class="momo-float momo2">🐾</div>
     <div class="momo-float momo3">❤️</div>
@@ -25,50 +19,58 @@
 
     <main class="momo-card">
 
-        <div class="momo-dog">
-            🐶
-        </div>
-
         <div class="momo-hearts">
             ❤️ 🐾 ❤️
         </div>
 
         <p class="final-small">
-            Hey <span id="momoName">Friend</span>...
+            Hey <span id="momoName">Friend</span> 💖
         </p>
 
         <h1>
-            Momo Time! 🐶❤️
+            One More Surprise! 🐶
         </h1>
 
-        <p class="momo-message">
-            Birthday surprise ka sabse cute part
-            abhi baaki tha! 🥹
-        </p>
-
-        <div class="momo-box">
-            🐶
+        <!-- REAL MOMO PHOTO -->
+        <div class="momo-photo">
+            <img src="momo.jpg" alt="Momo">
         </div>
 
-        <h2>
-            Stay Happy & Keep Smiling! 💖
-        </h2>
+        <!-- ONLINE / OFFLINE MESSAGE -->
+        <div class="momo-status">
 
-        <p class="final-message">
-            This little surprise was made
-            specially for you. 🎂✨
+            <p class="online-text">
+                🟢 Main online khila raha hoon 😋
+            </p>
+
+            <p class="offline-text">
+                ❤️ Aap offline khilana
+            </p>
+
+        </div>
+
+        <p class="momo-message">
+            Birthday surprise ka sabse cute part abhi baaki tha! 🥹🐶
         </p>
 
-        <button
-            type="button"
-            onclick="finalSurprise()"
-        >
-            One Last Surprise 🎁
-        </button>
+        <h2>
+            Happy Birthday once again! 🎂✨
+        </h2>
+
+        <div class="momo-bottom">
+            🏐 🐶 ❤️
+        </div>
 
     </main>
 
-    <script src="script.js"></script>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const name = params.get("name");
+
+        if (name) {
+            document.getElementById("momoName").textContent = name;
+        }
+    </script>
 
 </body>
 </html>

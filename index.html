@@ -1,45 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Birthday Surprise 🏐🐶</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="home">
+<body class="first-page">
 
-    <!-- =========================
-         FIRST PAGE
-    ========================== -->
+    <div class="floating-ball ball-one">🏐</div>
+    <div class="floating-ball ball-two">🏐</div>
+    <div class="floating-dog dog-one">🐶</div>
+    <div class="floating-dog dog-two">🐕</div>
 
-    <!-- Volleyball decorations -->
-    <div class="volleyball ball1">🏐</div>
-    <div class="volleyball ball2">🏐</div>
-    <div class="volleyball ball3">🏐</div>
+    <div class="card">
 
-    <!-- Pomeranian decorations -->
-    <div class="dog dog1">🐶</div>
-    <div class="dog dog2">🐕</div>
-
-    <main class="home-card">
-
-        <div class="top-icon">🏐</div>
+        <div class="main-ball">🏐</div>
 
         <h1>Birthday Surprise 🎂</h1>
 
-        <p class="intro">
+        <p class="subtitle">
             A special birthday surprise is waiting for you! 💖
         </p>
 
-        <div class="cute-dog">
-            🐶
-        </div>
+        <div class="big-dog">🐶</div>
 
-        <p class="enter-text">
+        <p class="name-text">
             Birthday person ka naam likho 💕
         </p>
 
@@ -48,73 +35,14 @@
             id="nameInput"
             placeholder="Enter name..."
             maxlength="30"
-            autocomplete="off"
         >
 
-        <button onclick="startBirthday()">
+        <!-- DIRECT SECOND PAGE -->
+        <a href="birthday.html" class="celebrate-btn">
             Celebrate 🎉
-        </button>
+        </a>
 
-    </main>
-
-
-    <!-- =========================
-         SECOND PAGE
-    ========================== -->
-
-    <section id="birthdayPage" class="birthday-page">
-
-        <!-- Volleyball -->
-        <div class="volleyball big-ball">
-            🏐
-        </div>
-
-        <!-- Balloons -->
-        <div class="balloon balloon1">🎈</div>
-        <div class="balloon balloon2">🎈</div>
-        <div class="balloon balloon3">🎈</div>
-        <div class="balloon balloon4">🎈</div>
-        <div class="balloon balloon5">🎈</div>
-
-        <!-- Birthday person's photo -->
-        <div class="birthday-photo">
-            <img
-                id="birthdayPhoto"
-                src="birthday-person.jpg"
-                alt="Birthday Person"
-            >
-        </div>
-
-        <h1>
-            Happy Birthday! 🎂🎉
-        </h1>
-
-        <!-- Name automatically appears here -->
-        <h2 id="personName"></h2>
-
-        <p class="birthday-message">
-            Wishing you a day full of happiness,
-            smiles and beautiful memories! 💖
-        </p>
-
-        <!-- Pomeranian -->
-        <div class="birthday-dog">
-            🐶
-        </div>
-
-        <p class="tap-message">
-            Ek aur surprise tumhara wait kar raha hai 👀
-        </p>
-
-        <button onclick="showNextSurprise()">
-            Tap Here 💝
-        </button>
-
-    </section>
-
-
-    <!-- JavaScript -->
-    <script src="script.js"></script>
+    </div>
 
 </body>
 </html>

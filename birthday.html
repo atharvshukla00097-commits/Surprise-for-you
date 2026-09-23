@@ -1,22 +1,84 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Birthday Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday 🎂</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body style="background:pink; text-align:center; padding-top:100px;">
+<body class="birthday-page">
 
-    <h1>🎂 HAPPY BIRTHDAY 🎂</h1>
+    <!-- Balloons -->
+    <div class="page2-balloon p2b1">🎈</div>
+    <div class="page2-balloon p2b2">🎈</div>
+    <div class="page2-balloon p2b3">🎈</div>
+    <div class="page2-balloon p2b4">🎈</div>
+    <div class="page2-balloon p2b5">🎈</div>
 
-    <h2>SHRADDHA SHUKLA ❤️</h2>
+    <!-- Volleyball -->
+    <div class="page2-ball">🏐</div>
 
-<script>
-const params = new URLSearchParams(window.location.search);
-const name = params.get("name");
+    <main class="birthday-card">
 
-if (name) {
-    document.getElementById("birthdayName").textContent = name;
-}
-</script>
+        <!-- Birthday Person Photo -->
+        <div class="small-photo">
+            <img src="birthday-person.jpg" alt="Birthday Person">
+        </div>
+
+        <!-- Name -->
+        <p class="hello-text">
+            Hey <span id="birthdayName">Friend</span> 💖
+        </p>
+
+        <!-- Main Heading -->
+        <h1>
+            Happy Birthday! 🎂
+        </h1>
+
+        <p class="wish-text">
+            May your special day be filled with happiness,
+            laughter and beautiful memories! ✨
+        </p>
+
+        <!-- Dog -->
+        <div class="page2-dog">
+            🐶
+        </div>
+
+        <p class="tap-text">
+            Abhi ek aur surprise baaki hai 👀
+        </p>
+
+        <button type="button" onclick="goToMomo()">
+            Tap Here 💝
+        </button>
+
+    </main>
+
+
+    <!-- Get name from Page 1 -->
+    <script>
+        const params = new URLSearchParams(window.location.search);
+
+        const name = params.get("name");
+
+        if (name) {
+            document.getElementById("birthdayName").textContent = name;
+        }
+
+
+        function goToMomo() {
+
+            const currentName = name || "Friend";
+
+            window.location.href =
+                "momo.html?name=" +
+                encodeURIComponent(currentName);
+        }
+    </script>
+
 </body>
 </html>
